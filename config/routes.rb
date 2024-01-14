@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: 'signup'
+  get '/eric-simons', to: 'users#show', as: 'eric-simons'
   get 'static_pages/home'
   get 'static_pages/reate'
   get 'static_pages/article'
