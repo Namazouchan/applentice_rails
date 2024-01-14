@@ -31,8 +31,9 @@
             <a class="nav-link" href="/login">Sign in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Sign up</a>
+            <%= link_to 'Sign up', signup_path, class: 'nav-link' %>
           </li>
+
         </ul>
       </div>
     </nav>
@@ -44,6 +45,7 @@
           An interactive learning project from <a href="https://thinkster.io">Thinkster</a>. Code &amp;
           design licensed under MIT.
         </span>
+        <%= debug(params) if Rails.env.development? %>
       </div>
     </footer>
   </body>
