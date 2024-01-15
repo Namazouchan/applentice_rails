@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'static_pages/reate'
   get 'static_pages/article'
 
+  get    "/login",   to: "sessions#new", as:'login'
+  post   "/login",   to: "sessions#create"
+  delete "/logout",  to: "sessions#destroy"
+
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -5,24 +5,28 @@
         <h1 class="text-xs-center">Sign up</h1>
         <p class="text-xs-center">
           <a href="/login">Have an account?</a>
+          <%= @eeee %>
         </p>
 
         <ul class="error-messages">
           <li>That email is already taken</li>
         </ul>
 
-        <form>
-          <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="text" placeholder="Username" />
+        <%= form_with model:@user, :url => {:action => :create},method: :post do |form| %>
+          <fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :name, placeholder: "Name", class: "form-control" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :email, placeholder: "E-mail", class:"form-control" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.password_field :password, placeholder: "Password", class: "form-control" %>
+            </fieldset>
+            <%= form.submit class: "btn btn-lg pull-xs-right btn-primary" %>
+            </button>
           </fieldset>
-          <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="text" placeholder="Email" />
-          </fieldset>
-          <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="password" placeholder="Password" />
-          </fieldset>
-          <button class="btn btn-lg btn-primary pull-xs-right">Sign up</button>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
